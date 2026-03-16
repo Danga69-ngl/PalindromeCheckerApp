@@ -2,20 +2,21 @@ public class UseCase1PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        // Display Application Name
-        System.out.println("==========================================");
-        System.out.println("   Welcome to the Palindrome Checker App  ");
-        System.out.println("==========================================");
+        // Hardcoded input string
+        String input = "madam";
 
-        // Display Application Version
-        System.out.println("Application Name    : Palindrome Checker");
-        System.out.println("Application Version : 1.0");
+        boolean isPalindrome = true;
 
-        System.out.println("==========================================");
-        System.out.println("  Starting application... Please wait.   ");
-        System.out.println("==========================================");
-\       
-        // Program continues to next use case or exits
-        System.out.println("Application started successfully.");
+        // Loop only till half of the string length
+        for (int i = 0; i < input.length() / 2; i++) {
+            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        // Display the result
+        System.out.println("Input text: " + input);
+        System.out.println("Is it a Palindrome? : " + isPalindrome);
     }
 }
